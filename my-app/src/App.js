@@ -7,11 +7,13 @@ class App extends Component {
       
     }
   }
+
   componentDidMount() {
     fetch('/users')
     .then((response) => response.json())
     .then((myJson) =>  console.log(myJson))
   }
+  
   render(){
     return (
       <div>
