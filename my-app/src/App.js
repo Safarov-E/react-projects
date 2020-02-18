@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css'
+import {CatalogTitle, CatalogItemContent} from './AppStyled'
 
 class App extends Component {
   constructor(props){
@@ -25,16 +25,16 @@ class App extends Component {
     const {bestsellers, coffee, goods} = this.state.img
     return (
       <>
-      <div class="catalogTitle">
+      <CatalogTitle>
         <h1 className="catalogHeaderTitle">bestsellers</h1>
-      </div>
-        <div className="catalogItemContent">
+      </CatalogTitle>
+        <CatalogItemContent>
         {
           bestsellers.map((item, index) => {
             return( 
             <div className="cardBox" key={index}>
-              <div className="noteBox-for-open">
-                <img src={item.url} className="catalogItemImages" width="219px"/>
+              <div>
+                <img src={item.url} width="219px"/>
                 <p className="catalogItemName">{item.name}</p> 
                 <p className="catalogItemPrice">Цена: {item.price}</p>
                 <div className="ItemButton">
@@ -44,19 +44,19 @@ class App extends Component {
             </div>)
           })
         }
-      </div>
-      <div class="catalogTitle">
+      </CatalogItemContent>
+      <CatalogTitle>
         <h1 className="catalogHeaderTitle">coffee</h1>
-      </div>
-      <div className="catalogItemContent">
+      </CatalogTitle>
+      <CatalogItemContent>
         {
           coffee.map((item, index) => {
             return( 
             <div className="cardBox" key={index}>
-              <div className="noteBox-for-open">
+              <div>
                 <p className="catalogItemName">{item.name}</p>
                 <p className="catalogItemCountry">Страна производитель: {item.country}</p>
-                <img src={item.url} className="catalogItemImages" width="219px"/>
+                <img src={item.url} width="219px"/>
                 <p className="catalogItemPrice">Цена: {item.price}</p>
                 <p className="catalogItemDescription">{item.description}</p>
                 <div className="ItemButton">
@@ -66,16 +66,16 @@ class App extends Component {
             </div>)
           })
         }
-      </div>
-      <div class="catalogTitle">
+      </CatalogItemContent>
+      <CatalogTitle>
         <h1 className="catalogHeaderTitle">goods</h1>
-      </div>
-      <div className="catalogItemContent">
+      </CatalogTitle>
+      <CatalogItemContent>
         {
           goods.map((item, index) => {
             return( 
             <div className="cardBox" key={index}>
-              <div className="noteBox-for-open">
+              <div>
                 <p className="catalogItemName">{item.name}</p> 
                 <img src={item.url} className="catalogItemImages" width="219px"/>
                 <p className="catalogItemPrice">Цена: {item.price}</p>
@@ -86,7 +86,7 @@ class App extends Component {
             </div>)
           })
         }
-      </div>
+      </CatalogItemContent>
       </>
     )
   }
